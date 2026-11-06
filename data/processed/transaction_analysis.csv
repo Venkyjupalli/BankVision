@@ -1,0 +1,21 @@
+branch_id,branch_name,city,state,total_transactions,successful_transactions,failed_transactions,pending_transactions,total_credit_amount,total_debit_amount,average_transaction_amount,upi_transactions,atm_transactions,neft_transactions,imps_transactions
+1,Madanapalle Main Branch,Madanapalle,Andhra Pradesh,1418,1339.0,57.0,22.0,33581802.83,32104579.77,49056.297685,152.0,150.0,145.0,161.0
+2,Hyderabad Main Branch,Hyderabad,Telangana,1562,1470.0,56.0,36.0,37849476.09,35664445.08,50009.470184,154.0,161.0,185.0,149.0
+3,Vijayawada Main Branch,Vijayawada,Andhra Pradesh,1369,1289.0,60.0,20.0,32115991.77,32509936.45,50136.484267,141.0,129.0,139.0,152.0
+4,Visakhapatnam Main Branch,Visakhapatnam,Andhra Pradesh,1461,1368.0,59.0,34.0,34932116.18,34622415.71,50843.95606,160.0,158.0,141.0,136.0
+5,Tirupati Main Branch,Tirupati,Andhra Pradesh,1393,1312.0,52.0,29.0,31519587.57,32115775.61,48502.563399,136.0,131.0,151.0,161.0
+6,Bengaluru Main Branch,Bengaluru,Karnataka,1311,1239.0,47.0,25.0,31540843.72,30650545.24,50194.825634,130.0,135.0,147.0,131.0
+7,Mysuru Main Branch,Mysuru,Karnataka,1447,1361.0,62.0,24.0,34703069.71,31235689.07,48448.75737,159.0,139.0,151.0,154.0
+8,Chennai Main Branch,Chennai,Tamil Nadu,1507,1418.0,51.0,38.0,35825496.82,36479725.63,50990.989034,145.0,165.0,173.0,162.0
+9,Coimbatore Main Branch,Coimbatore,Tamil Nadu,1463,1362.0,68.0,33.0,35598111.77,33880790.64,51012.409993,164.0,165.0,132.0,146.0
+10,Mumbai Main Branch,Mumbai,Maharashtra,1524,1438.0,55.0,31.0,37055509.65,35871157.05,50713.95459,163.0,177.0,131.0,173.0
+11,Pune Main Branch,Pune,Maharashtra,1399,1333.0,45.0,21.0,33570729.19,32726963.03,49735.703091,150.0,166.0,141.0,139.0
+12,New Delhi Main Branch,New Delhi,Delhi,1622,1524.0,71.0,27.0,38025669.72,38067507.25,49929.906148,171.0,162.0,183.0,161.0
+13,Gurugram Main Branch,Gurugram,Haryana,1511,1414.0,62.0,35.0,37637978.79,33412032.72,50247.532893,160.0,147.0,151.0,145.0
+14,Ahmedabad Main Branch,Ahmedabad,Gujarat,1697,1605.0,62.0,30.0,39616614.67,39265435.66,49147.69491,168.0,181.0,202.0,175.0
+15,Vadodara Main Branch,Vadodara,Gujarat,1638,1524.0,79.0,35.0,41016512.83,35884520.77,50459.995801,158.0,167.0,182.0,156.0
+16,Kochi Main Branch,Kochi,Kerala,1564,1466.0,66.0,32.0,36795323.6,38141863.93,51116.771849,138.0,169.0,149.0,161.0
+17,Thiruvananthapuram Main Branch,Thiruvananthapuram,Kerala,1394,1311.0,59.0,24.0,34204386.92,31306280.42,49969.997971,151.0,143.0,161.0,144.0
+18,Kolkata Main Branch,Kolkata,West Bengal,1442,1348.0,61.0,33.0,33654535.43,32229229.12,48875.196254,150.0,148.0,148.0,139.0
+19,Bhubaneswar Main Branch,Bhubaneswar,Odisha,1670,1571.0,66.0,33.0,40457366.68,38444463.59,50223.953068,180.0,165.0,162.0,172.0
+20,Jaipur Main Branch,Jaipur,Rajasthan,1608,1511.0,70.0,27.0,37279339.26,36844609.67,49056.220338,196.0,165.0,162.0,176.0

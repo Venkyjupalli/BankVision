@@ -1,0 +1,21 @@
+branch_id,branch_name,branch_code,city,state,ifsc_code,manager_name
+1,Madanapalle Main Branch,BV001,Madanapalle,Andhra Pradesh,SYNB0000001,Aryan Maharaj
+2,Hyderabad Main Branch,BV002,Hyderabad,Telangana,SYNB0000002,Udant Dewan
+3,Vijayawada Main Branch,BV003,Vijayawada,Andhra Pradesh,SYNB0000003,Gagan Sami
+4,Visakhapatnam Main Branch,BV004,Visakhapatnam,Andhra Pradesh,SYNB0000004,Ayushman Chander
+5,Tirupati Main Branch,BV005,Tirupati,Andhra Pradesh,SYNB0000005,Viraj Tiwari
+6,Bengaluru Main Branch,BV006,Bengaluru,Karnataka,SYNB0000006,Rushil Saini
+7,Mysuru Main Branch,BV007,Mysuru,Karnataka,SYNB0000007,Saumya Mall
+8,Chennai Main Branch,BV008,Chennai,Tamil Nadu,SYNB0000008,Nathaniel Sami
+9,Coimbatore Main Branch,BV009,Coimbatore,Tamil Nadu,SYNB0000009,Arunima Dugal
+10,Mumbai Main Branch,BV010,Mumbai,Maharashtra,SYNB0000010,Gayathri Chaudry
+11,Pune Main Branch,BV011,Pune,Maharashtra,SYNB0000011,Lajita Chatterjee
+12,New Delhi Main Branch,BV012,New Delhi,Delhi,SYNB0000012,Hemangini Lalla
+13,Gurugram Main Branch,BV013,Gurugram,Haryana,SYNB0000013,Tripti Yadav
+14,Ahmedabad Main Branch,BV014,Ahmedabad,Gujarat,SYNB0000014,Kritika Brar
+15,Vadodara Main Branch,BV015,Vadodara,Gujarat,SYNB0000015,Janaki Handa
+16,Kochi Main Branch,BV016,Kochi,Kerala,SYNB0000016,Chakradev Kari
+17,Thiruvananthapuram Main Branch,BV017,Thiruvananthapuram,Kerala,SYNB0000017,Fariq Kaul
+18,Kolkata Main Branch,BV018,Kolkata,West Bengal,SYNB0000018,Lajita Mall
+19,Bhubaneswar Main Branch,BV019,Bhubaneswar,Odisha,SYNB0000019,Janya Gaba
+20,Jaipur Main Branch,BV020,Jaipur,Rajasthan,SYNB0000020,Isha Kadakia
