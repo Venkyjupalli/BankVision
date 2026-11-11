@@ -1,4 +1,4 @@
-
+﻿
 import { useEffect, useState } from "react";
 import axios from "axios";
 import {
@@ -19,7 +19,7 @@ import {
   RefreshCw,
 } from "lucide-react";
 
-const API_URL = "http://localhost:5000/api/dashboard";
+import { API_URL } from "../services/config";
 
 interface RiskSummary {
   totalLoans: number;
@@ -182,7 +182,7 @@ function Risk() {
           </div>
           <div>
             <p>Total Loans Assessed</p>
-            <h2>{loading ? "—" : formatNumber(summary.totalLoans)}</h2>
+            <h2>{loading ? "â€”" : formatNumber(summary.totalLoans)}</h2>
           </div>
         </div>
 
@@ -192,7 +192,7 @@ function Risk() {
           </div>
           <div>
             <p>High Risk Loans</p>
-            <h2>{loading ? "—" : formatNumber(summary.highRisk)}</h2>
+            <h2>{loading ? "â€”" : formatNumber(summary.highRisk)}</h2>
           </div>
         </div>
 
@@ -202,7 +202,7 @@ function Risk() {
           </div>
           <div>
             <p>Medium Risk Loans</p>
-            <h2>{loading ? "—" : formatNumber(summary.mediumRisk)}</h2>
+            <h2>{loading ? "â€”" : formatNumber(summary.mediumRisk)}</h2>
           </div>
         </div>
 
@@ -212,7 +212,7 @@ function Risk() {
           </div>
           <div>
             <p>Low Risk Loans</p>
-            <h2>{loading ? "—" : formatNumber(summary.lowRisk)}</h2>
+            <h2>{loading ? "â€”" : formatNumber(summary.lowRisk)}</h2>
           </div>
         </div>
       </div>

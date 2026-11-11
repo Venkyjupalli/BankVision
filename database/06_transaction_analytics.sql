@@ -26,28 +26,28 @@ SELECT
         THEN 1 ELSE 0 END
     ) AS pending_transactions,
 
-    SUM(
+    COALESCE(SUM(
         CASE
             WHEN t.transaction_status = 'Success'
              AND t.transaction_type = 'Credit'
             THEN t.amount ELSE 0
         END
-    ) AS total_credit_amount,
+    ), 0) AS total_credit_amount,
 
-    SUM(
+    COALESCE(SUM(
         CASE
             WHEN t.transaction_status = 'Success'
              AND t.transaction_type = 'Debit'
             THEN t.amount ELSE 0
         END
-    ) AS total_debit_amount,
+    ), 0) AS total_debit_amount,
 
-    AVG(
+    COALESCE(AVG(
         CASE
             WHEN t.transaction_status = 'Success'
             THEN t.amount
         END
-    ) AS average_transaction_amount,
+    ), 0) AS average_transaction_amount,
 
     SUM(
         CASE
@@ -94,13 +94,11 @@ GROUP BY
     b.branch_name,
     b.city,
     b.state;
-    
-    SELECT *
-FROM vw_transaction_analytics;
 
-SELECT
-    SUM(total_transactions) AS total_transactions,
-    SUM(successful_transactions) AS successful_transactions,
-    SUM(failed_transactions) AS failed_transactions,
-    SUM(pending_transactions) AS pending_transactions
+
+-- Verify transaction analytics
+SHOW FULL TABLES
+WHERE Table_type = 'VIEW';
+
+SELECT *
 FROM vw_transaction_analytics;

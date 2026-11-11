@@ -1,4 +1,4 @@
-
+﻿
 import { useCallback, useEffect, useMemo, useState } from "react";
 import axios from "axios";
 import {
@@ -24,7 +24,7 @@ import {
   CartesianGrid,
 } from "recharts";
 
-const API_URL = "http://localhost:5000/api/dashboard";
+import { API_URL } from "../services/config";
 
 const COLORS = ["#4f46e5", "#0d9488", "#f59e0b", "#64748b", "#e879f9"];
 
@@ -59,7 +59,7 @@ const formatNumber = (value: number) =>
   new Intl.NumberFormat("en-IN").format(value);
 
 const formatCrores = (value: number) =>
-  `₹${value.toFixed(2)} Cr`;
+  `â‚¹${value.toFixed(2)} Cr`;
 
 function Overview() {
   const [summary, setSummary] = useState<Summary | null>(null);
@@ -209,28 +209,28 @@ function Overview() {
   const stats = [
     {
       title: "Total Customers",
-      value: summary ? formatNumber(Number(summary.totalCustomers)) : "—",
+      value: summary ? formatNumber(Number(summary.totalCustomers)) : "â€”",
       description: "Registered customer records",
       icon: Users,
       iconClass: "overview-blue",
     },
     {
       title: "Total Accounts",
-      value: summary ? formatNumber(Number(summary.totalAccounts)) : "—",
+      value: summary ? formatNumber(Number(summary.totalAccounts)) : "â€”",
       description: "Bank account records",
       icon: Wallet,
       iconClass: "overview-purple",
     },
     {
       title: "Total Loans",
-      value: summary ? formatNumber(Number(summary.totalLoans)) : "—",
+      value: summary ? formatNumber(Number(summary.totalLoans)) : "â€”",
       description: "Loan records",
       icon: Landmark,
       iconClass: "overview-green",
     },
     {
       title: "Total Transactions",
-      value: summary ? formatNumber(Number(summary.totalTransactions)) : "—",
+      value: summary ? formatNumber(Number(summary.totalTransactions)) : "â€”",
       description: "Transaction records",
       icon: ArrowLeftRight,
       iconClass: "overview-orange",
@@ -278,7 +278,7 @@ function Overview() {
                 </div>
               </div>
 
-              <h2>{loading ? "—" : stat.value}</h2>
+              <h2>{loading ? "â€”" : stat.value}</h2>
               <p>{stat.description}</p>
             </div>
           );
@@ -293,7 +293,7 @@ function Overview() {
           <div>
             <span>Total Account Balance</span>
             <strong>
-              {loading ? "—" : formatCrores(totalAccountBalance)}
+              {loading ? "â€”" : formatCrores(totalAccountBalance)}
             </strong>
             <small>Aggregated from branch account balances</small>
           </div>
@@ -306,7 +306,7 @@ function Overview() {
           <div>
             <span>Loan Outstanding</span>
             <strong>
-              {loading ? "—" : formatCrores(totalLoanOutstanding)}
+              {loading ? "â€”" : formatCrores(totalLoanOutstanding)}
             </strong>
             <small>Aggregated branch-level outstanding amount</small>
           </div>
@@ -319,7 +319,7 @@ function Overview() {
           <div>
             <span>FD Investment</span>
             <strong>
-              {loading ? "—" : formatCrores(totalDepositInvestment)}
+              {loading ? "â€”" : formatCrores(totalDepositInvestment)}
             </strong>
             <small>Aggregated branch-level FD principal</small>
           </div>
@@ -412,7 +412,7 @@ function Overview() {
 
           <div className="overview-chart-caption">
             <span>Transaction success rate</span>
-            <strong>{loading ? "—" : `${successRate.toFixed(2)}%`}</strong>
+            <strong>{loading ? "â€”" : `${successRate.toFixed(2)}%`}</strong>
           </div>
         </div>
       </div>
@@ -421,7 +421,7 @@ function Overview() {
         <div className="overview-panel-heading">
           <div>
             <h3>Account Balance by Branch</h3>
-            <p>Top branches ranked by account balance (₹ Crores)</p>
+            <p>Top branches ranked by account balance (â‚¹ Crores)</p>
           </div>
         </div>
 
@@ -448,7 +448,7 @@ function Overview() {
                 <YAxis tick={{ fontSize: 11 }} />
                 <Tooltip
                   formatter={(value) => [
-                    `₹${Number(value).toFixed(2)} Cr`,
+                    `â‚¹${Number(value).toFixed(2)} Cr`,
                     "Account Balance",
                   ]}
                 />
@@ -468,7 +468,7 @@ function Overview() {
         <div className="overview-panel-heading">
           <div>
             <h3>Loan and Deposit Comparison</h3>
-            <p>Branch-level loan outstanding and FD investment (₹ Crores)</p>
+            <p>Branch-level loan outstanding and FD investment (â‚¹ Crores)</p>
           </div>
         </div>
 
@@ -497,7 +497,7 @@ function Overview() {
                 <YAxis tick={{ fontSize: 11 }} />
                 <Tooltip
                   formatter={(value, name) => [
-                    `₹${Number(value).toFixed(2)} Cr`,
+                    `â‚¹${Number(value).toFixed(2)} Cr`,
                     name,
                   ]}
                 />

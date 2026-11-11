@@ -1,6 +1,7 @@
-
+﻿
 import { useEffect, useState } from "react";
 import axios from "axios";
+import { API_URL } from "../services/config";
 
 import {
   BarChart,
@@ -30,7 +31,7 @@ export default function DepositAnalyticsChart() {
     const fetchDepositData = async () => {
       try {
         const response = await axios.get<DepositData[]>(
-          "http://localhost:5000/api/dashboard/deposits"
+          `${API_URL}/deposits`
         );
 
         setDepositData(
@@ -62,7 +63,7 @@ export default function DepositAnalyticsChart() {
     <div className="chart-card branch-chart-card">
       <div className="chart-header">
         <h3>Fixed Deposit Investment by Branch</h3>
-        <p>Total FD investment (₹ Crores)</p>
+        <p>Total FD investment (â‚¹ Crores)</p>
       </div>
 
       <div className="branch-chart-container">
@@ -83,12 +84,12 @@ export default function DepositAnalyticsChart() {
 
             <YAxis
               tick={{ fontSize: 11 }}
-              tickFormatter={(value) => `₹${value}`}
+              tickFormatter={(value) => `â‚¹${value}`}
             />
 
             <Tooltip
               formatter={(value) => [
-                `₹${value} Cr`,
+                `â‚¹${value} Cr`,
                 "FD Investment",
               ]}
             />

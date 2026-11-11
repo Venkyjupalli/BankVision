@@ -1,4 +1,4 @@
-
+﻿
 import { useEffect, useMemo, useState } from "react";
 import axios from "axios";
 import {
@@ -20,7 +20,7 @@ import {
   Tooltip,
 } from "recharts";
 
-const API_URL = "http://localhost:5000/api/dashboard";
+import { API_URL } from "../services/config";
 const PAGE_SIZE = 10;
 
 interface Branch {
@@ -220,7 +220,7 @@ function Branches() {
             </div>
           </div>
           <h2>
-            {analyticsLoading ? "—" : analytics.totalBranches}
+            {analyticsLoading ? "â€”" : analytics.totalBranches}
           </h2>
           <p>Branches in the directory</p>
         </div>
@@ -233,7 +233,7 @@ function Branches() {
             </div>
           </div>
           <h2>
-            {analyticsLoading ? "—" : analytics.totalStates}
+            {analyticsLoading ? "â€”" : analytics.totalStates}
           </h2>
           <p>Unique states represented</p>
         </div>
@@ -246,7 +246,7 @@ function Branches() {
             </div>
           </div>
           <h2>
-            {analyticsLoading ? "—" : analytics.totalCities}
+            {analyticsLoading ? "â€”" : analytics.totalCities}
           </h2>
           <p>Unique cities represented</p>
         </div>
@@ -260,7 +260,7 @@ function Branches() {
           </div>
           <h2>
             {analyticsLoading
-              ? "—"
+              ? "â€”"
               : new Set(
                   allBranches
                     .map((branch) => branch.manager_name)
@@ -424,13 +424,13 @@ function Branches() {
                       </div>
                       <span>{branch.branch_name}</span>
                     </td>
-                    <td>{branch.branch_code || "—"}</td>
-                    <td>{branch.city || "—"}</td>
-                    <td>{branch.state || "—"}</td>
+                    <td>{branch.branch_code || "â€”"}</td>
+                    <td>{branch.city || "â€”"}</td>
+                    <td>{branch.state || "â€”"}</td>
                     <td className="branch-ifsc-cell">
-                      {branch.ifsc_code || "—"}
+                      {branch.ifsc_code || "â€”"}
                     </td>
-                    <td>{branch.manager_name || "—"}</td>
+                    <td>{branch.manager_name || "â€”"}</td>
                   </tr>
                 ))
               )}

@@ -1,4 +1,4 @@
-
+﻿
 import { useEffect, useState } from "react";
 import axios from "axios";
 import {
@@ -26,7 +26,7 @@ import {
   CartesianGrid,
 } from "recharts";
 
-const API_URL = "http://localhost:5000/api/dashboard";
+import { API_URL } from "../services/config";
 const PAGE_SIZE = 10;
 const ANALYTICS_BATCH_SIZE = 100;
 
@@ -87,7 +87,7 @@ const formatDate = (date: string | null) =>
         year: "numeric",
         timeZone: "UTC",
       })
-    : "—";
+    : "â€”";
 
 export default function Loans() {
   const [loans, setLoans] = useState<Loan[]>([]);
@@ -287,7 +287,7 @@ export default function Loans() {
           <div>
             <p>Total Loans</p>
             <h2>
-              {analyticsLoading ? "—" : formatNumber(totalLoans)}
+              {analyticsLoading ? "â€”" : formatNumber(totalLoans)}
             </h2>
             <span>Loans in the portfolio</span>
           </div>
@@ -300,7 +300,7 @@ export default function Loans() {
           <div>
             <p>Total Loan Portfolio</p>
             <h2>
-              {analyticsLoading ? "—" : formatCurrency(totalPortfolio)}
+              {analyticsLoading ? "â€”" : formatCurrency(totalPortfolio)}
             </h2>
             <span>Total original loan amount</span>
           </div>
@@ -313,7 +313,7 @@ export default function Loans() {
           <div>
             <p>Active Loans</p>
             <h2>
-              {analyticsLoading ? "—" : formatNumber(activeLoans.length)}
+              {analyticsLoading ? "â€”" : formatNumber(activeLoans.length)}
             </h2>
             <span>Currently active loans</span>
           </div>
@@ -326,7 +326,7 @@ export default function Loans() {
           <div>
             <p>Defaulted Loans</p>
             <h2>
-              {analyticsLoading ? "—" : formatNumber(defaultedLoans.length)}
+              {analyticsLoading ? "â€”" : formatNumber(defaultedLoans.length)}
             </h2>
             <span>Loans marked as defaulted</span>
           </div>
@@ -342,7 +342,7 @@ export default function Loans() {
         <div className="loan-outstanding-info">
           <p>Total Outstanding Amount</p>
           <h2>
-            {analyticsLoading ? "—" : formatCurrency(totalOutstanding)}
+            {analyticsLoading ? "â€”" : formatCurrency(totalOutstanding)}
           </h2>
           <span>Outstanding balances across all loan records</span>
         </div>
@@ -350,7 +350,7 @@ export default function Loans() {
         <div className="loan-outstanding-side">
           <span>Closed Loans</span>
           <strong>
-            {analyticsLoading ? "—" : formatNumber(closedLoans.length)}
+            {analyticsLoading ? "â€”" : formatNumber(closedLoans.length)}
           </strong>
         </div>
       </section>
@@ -605,13 +605,13 @@ export default function Loans() {
                     <td>{formatCurrency(Number(loan.loan_amount))}</td>
                     <td>
                       {loan.outstanding_amount === null
-                        ? "—"
+                        ? "â€”"
                         : formatCurrency(Number(loan.outstanding_amount))}
                     </td>
                     <td>{Number(loan.interest_rate).toFixed(2)}%</td>
                     <td>
                       {loan.monthly_emi === null
-                        ? "—"
+                        ? "â€”"
                         : formatCurrency(Number(loan.monthly_emi))}
                     </td>
                     <td>{loan.loan_tenure_months} months</td>

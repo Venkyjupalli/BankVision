@@ -1,6 +1,7 @@
-
+﻿
 import { useEffect, useState } from "react";
 import axios from "axios";
+import { API_URL } from "../services/config";
 
 import {
   BarChart,
@@ -30,7 +31,7 @@ export default function LoanAnalyticsChart() {
     const fetchLoanData = async () => {
       try {
         const response = await axios.get<LoanData[]>(
-          "http://localhost:5000/api/dashboard/loans"
+          `${API_URL}/loans`
         );
 
         setLoanData(
@@ -62,7 +63,7 @@ export default function LoanAnalyticsChart() {
     <div className="chart-card branch-chart-card">
       <div className="chart-header">
         <h3>Outstanding Loans by Branch</h3>
-        <p>Loan outstanding amount (₹ Crores)</p>
+        <p>Loan outstanding amount (â‚¹ Crores)</p>
       </div>
 
       <div className="branch-chart-container">
@@ -83,12 +84,12 @@ export default function LoanAnalyticsChart() {
 
             <YAxis
               tick={{ fontSize: 11 }}
-              tickFormatter={(value) => `₹${value}`}
+              tickFormatter={(value) => `â‚¹${value}`}
             />
 
             <Tooltip
               formatter={(value) => [
-                `₹${value} Cr`,
+                `â‚¹${value} Cr`,
                 "Outstanding Loan",
               ]}
             />

@@ -1,6 +1,7 @@
-
+﻿
 import { useEffect, useState } from "react";
 import axios from "axios";
+import { API_URL } from "../services/config";
 
 import {
   PieChart,
@@ -27,7 +28,7 @@ export default function CustomerSegmentChart() {
     const fetchCustomerData = async () => {
       try {
         const response = await axios.get<CustomerSegment[]>(
-          "http://localhost:5000/api/dashboard/customers"
+          `${API_URL}/customers`
         );
 
         setCustomerData(response.data);

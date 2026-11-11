@@ -1,6 +1,7 @@
-
+﻿
 import { useEffect, useState } from "react";
 import axios from "axios";
+import { API_URL } from "../services/config";
 
 import {
   BarChart,
@@ -28,7 +29,7 @@ export default function BranchPerformanceChart() {
     const fetchBranchData = async () => {
       try {
         const response = await axios.get<BranchData[]>(
-          "http://localhost:5000/api/dashboard/branches"
+          `${API_URL}/branches`
         );
 
         setBranchData(
@@ -60,7 +61,7 @@ export default function BranchPerformanceChart() {
     <div className="chart-card branch-chart-card">
       <div className="chart-header">
         <h3>Branch Performance</h3>
-        <p>Total account balance by branch (₹ Crores)</p>
+        <p>Total account balance by branch (â‚¹ Crores)</p>
       </div>
 
       <div className="branch-chart-container">
@@ -81,12 +82,12 @@ export default function BranchPerformanceChart() {
 
             <YAxis
               tick={{ fontSize: 11 }}
-              tickFormatter={(value) => `₹${value}`}
+              tickFormatter={(value) => `â‚¹${value}`}
             />
 
             <Tooltip
               formatter={(value) => [
-                `₹${value} Cr`,
+                `â‚¹${value} Cr`,
                 "Account Balance",
               ]}
             />

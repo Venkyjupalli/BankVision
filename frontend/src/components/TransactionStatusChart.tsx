@@ -1,6 +1,7 @@
-
+﻿
 import { useEffect, useState } from "react";
 import axios from "axios";
+import { API_URL } from "../services/config";
 
 import {
   PieChart,
@@ -33,7 +34,7 @@ export default function TransactionStatusChart() {
     const fetchTransactionData = async () => {
       try {
         const response = await axios.get<TransactionStatus[]>(
-          "http://localhost:5000/api/dashboard/transactions"
+          `${API_URL}/transactions`
         );
 
         setTransactionData(response.data);

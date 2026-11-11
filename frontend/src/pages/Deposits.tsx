@@ -1,4 +1,4 @@
-
+﻿
 import { useEffect, useMemo, useState } from "react";
 import axios from "axios";
 import {
@@ -25,7 +25,7 @@ import {
   CartesianGrid,
 } from "recharts";
 
-const API_URL = "http://localhost:5000/api/dashboard";
+import { API_URL } from "../services/config";
 
 interface Deposit {
   fd_id: number;
@@ -65,15 +65,15 @@ const formatCurrency = (value: number) =>
   }).format(value);
 
 const formatCompactCurrency = (value: number) => {
-  if (value >= 10000000) return `₹${(value / 10000000).toFixed(2)} Cr`;
-  if (value >= 100000) return `₹${(value / 100000).toFixed(2)} L`;
+  if (value >= 10000000) return `â‚¹${(value / 10000000).toFixed(2)} Cr`;
+  if (value >= 100000) return `â‚¹${(value / 100000).toFixed(2)} L`;
   return formatCurrency(value);
 };
 
 const formatDate = (date: string | null | undefined) => {
-  if (!date) return "—";
+  if (!date) return "â€”";
   const parsed = new Date(date);
-  if (Number.isNaN(parsed.getTime())) return "—";
+  if (Number.isNaN(parsed.getTime())) return "â€”";
   return parsed.toLocaleDateString("en-IN", {
     day: "2-digit",
     month: "short",
@@ -319,7 +319,7 @@ function Deposits() {
               <Wallet size={20} />
             </div>
           </div>
-          <h2>{analyticsLoading ? "—" : analytics.total.toLocaleString("en-IN")}</h2>
+          <h2>{analyticsLoading ? "â€”" : analytics.total.toLocaleString("en-IN")}</h2>
           <p>All fixed deposit records</p>
         </div>
 
@@ -332,7 +332,7 @@ function Deposits() {
           </div>
           <h2>
             {analyticsLoading
-              ? "—"
+              ? "â€”"
               : formatCompactCurrency(analytics.totalPrincipal)}
           </h2>
           <p>Combined principal amount</p>
@@ -347,7 +347,7 @@ function Deposits() {
           </div>
           <h2>
             {analyticsLoading
-              ? "—"
+              ? "â€”"
               : analytics.activeCount.toLocaleString("en-IN")}
           </h2>
           <p>
@@ -366,7 +366,7 @@ function Deposits() {
           </div>
           <h2>
             {analyticsLoading
-              ? "—"
+              ? "â€”"
               : analytics.maturedCount.toLocaleString("en-IN")}
           </h2>
           <p>
@@ -464,7 +464,7 @@ function Deposits() {
             <span>Active Principal</span>
             <strong>
               {analyticsLoading
-                ? "—"
+                ? "â€”"
                 : formatCurrency(analytics.activePrincipal)}
             </strong>
             <small>Principal in active deposits</small>
@@ -479,7 +479,7 @@ function Deposits() {
             <span>Matured Principal</span>
             <strong>
               {analyticsLoading
-                ? "—"
+                ? "â€”"
                 : formatCurrency(analytics.maturedPrincipal)}
             </strong>
             <small>Principal in matured deposits</small>
@@ -494,7 +494,7 @@ function Deposits() {
             <span>Closed Deposits</span>
             <strong>
               {analyticsLoading
-                ? "—"
+                ? "â€”"
                 : analytics.closedCount.toLocaleString("en-IN")}
             </strong>
             <small>Deposits marked as closed</small>
@@ -595,7 +595,7 @@ function Deposits() {
                     <td>{item.tenure_months} months</td>
                     <td>
                       {item.maturity_amount == null
-                        ? "—"
+                        ? "â€”"
                         : formatCurrency(money(item.maturity_amount))}
                     </td>
                     <td>{formatDate(item.maturity_date)}</td>

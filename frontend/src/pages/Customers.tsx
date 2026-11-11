@@ -1,4 +1,4 @@
-
+﻿
 import { useEffect, useState } from "react";
 import { useAppSettings } from "../context/SettingsContext";
 import axios from "axios";
@@ -27,7 +27,7 @@ import {
   CartesianGrid,
 } from "recharts";
 
-const API_URL = "http://localhost:5000/api/dashboard";
+import { API_URL } from "../services/config";
 
 interface Customer {
   customer_id: number;
@@ -209,7 +209,7 @@ useEffect(() => {
           </div>
           <div>
             <p>Total Customers</p>
-            <h2>{loading ? "—" : formatNumber(totalRecords)}</h2>
+            <h2>{loading ? "â€”" : formatNumber(totalRecords)}</h2>
             <span>Registered customer records</span>
           </div>
         </div>
@@ -220,7 +220,7 @@ useEffect(() => {
           </div>
           <div>
             <p>VIP Customers</p>
-            <h2>{loading ? "—" : formatNumber(vipCount)}</h2>
+            <h2>{loading ? "â€”" : formatNumber(vipCount)}</h2>
             <span>{getPercentage(vipCount)}% of customer segments</span>
           </div>
         </div>
@@ -231,7 +231,7 @@ useEffect(() => {
           </div>
           <div>
             <p>Premium Customers</p>
-            <h2>{loading ? "—" : formatNumber(premiumCount)}</h2>
+            <h2>{loading ? "â€”" : formatNumber(premiumCount)}</h2>
             <span>{getPercentage(premiumCount)}% of customer segments</span>
           </div>
         </div>
@@ -242,7 +242,7 @@ useEffect(() => {
           </div>
           <div>
             <p>Regular Customers</p>
-            <h2>{loading ? "—" : formatNumber(regularCount)}</h2>
+            <h2>{loading ? "â€”" : formatNumber(regularCount)}</h2>
             <span>{getPercentage(regularCount)}% of customer segments</span>
           </div>
         </div>

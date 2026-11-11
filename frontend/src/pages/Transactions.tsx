@@ -1,4 +1,4 @@
-
+﻿
 import { useEffect, useState } from "react";
 import axios from "axios";
 import {
@@ -26,7 +26,7 @@ import {
   CartesianGrid,
 } from "recharts";
 
-const API_URL = "http://localhost:5000/api/dashboard";
+import { API_URL } from "../services/config";
 
 interface Transaction {
   transaction_id: number;
@@ -215,7 +215,7 @@ export default function Transactions() {
           </div>
           <div>
             <p>Total Transactions</p>
-            <h2>{loading ? "—" : formatNumber(totalTransactions)}</h2>
+            <h2>{loading ? "â€”" : formatNumber(totalTransactions)}</h2>
             <span>All recorded transactions</span>
           </div>
         </div>
@@ -226,7 +226,7 @@ export default function Transactions() {
           </div>
           <div>
             <p>Successful Transactions</p>
-            <h2>{loading ? "—" : formatNumber(successCount)}</h2>
+            <h2>{loading ? "â€”" : formatNumber(successCount)}</h2>
             <span>Successfully processed</span>
           </div>
         </div>
@@ -237,7 +237,7 @@ export default function Transactions() {
           </div>
           <div>
             <p>Failed Transactions</p>
-            <h2>{loading ? "—" : formatNumber(failedCount)}</h2>
+            <h2>{loading ? "â€”" : formatNumber(failedCount)}</h2>
             <span>Unsuccessful transactions</span>
           </div>
         </div>
@@ -248,7 +248,7 @@ export default function Transactions() {
           </div>
           <div>
             <p>Pending Transactions</p>
-            <h2>{loading ? "—" : formatNumber(pendingCount)}</h2>
+            <h2>{loading ? "â€”" : formatNumber(pendingCount)}</h2>
             <span>Awaiting completion</span>
           </div>
         </div>
@@ -262,7 +262,7 @@ export default function Transactions() {
 
         <div className="transaction-success-info">
           <p>Transaction Success Rate</p>
-          <h2>{loading ? "—" : `${successRate}%`}</h2>
+          <h2>{loading ? "â€”" : `${successRate}%`}</h2>
           <span>Successful transactions as a share of all recorded transactions</span>
         </div>
 
@@ -531,14 +531,14 @@ export default function Transactions() {
 
                     <td>{transaction.account_id}</td>
                     <td>{transaction.transaction_type}</td>
-                    <td>{transaction.transaction_category || "—"}</td>
+                    <td>{transaction.transaction_category || "â€”"}</td>
 
                     <td className="transaction-amount">
                       {formatAmount(transaction.amount)}
                     </td>
 
                     <td>{formatDate(transaction.transaction_date)}</td>
-                    <td>{transaction.transaction_mode || "—"}</td>
+                    <td>{transaction.transaction_mode || "â€”"}</td>
 
                     <td>
                       <span

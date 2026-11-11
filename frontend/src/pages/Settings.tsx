@@ -1,4 +1,4 @@
-
+﻿
 import { useEffect, useState } from "react";
 import axios from "axios";
 import {
@@ -22,7 +22,7 @@ import {
   type Preferences,
 } from "../context/SettingsContext";
 
-const API_URL = "http://localhost:5000";
+import { BACKEND_URL } from "../services/config";
 
 interface HealthStatus {
   connected: boolean;
@@ -71,7 +71,7 @@ function Settings() {
     try {
       setCheckingHealth(true);
 
-      const response = await axios.get(`${API_URL}/api/health`, {
+      const response = await axios.get(`${BACKEND_URL}/api/health`, {
         timeout: 5000,
       });
 
@@ -322,7 +322,7 @@ function Settings() {
 
             <div>
               <strong>Backend API</strong>
-              <span>{API_URL}</span>
+              <span>{BACKEND_URL}</span>
             </div>
           </div>
 
